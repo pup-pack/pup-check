@@ -1,63 +1,50 @@
 # pup-check
 
-<img src="images/pup.png" alt="pup logo" width="110">
+<img
+src="./images/pup.png"
+alt="pup logo"
+width="110">
 
-`pup-check` brings a Python repository up to a managed professional baseline.
-
-It is designed for repositories that follow repeatable professional patterns
-but still contain local, project-specific work.
-The tool updates shared repository infrastructure from canonical templates
-while preserving source code, tests, notebooks, data, documentation,
-and other project-specific surfaces unless those areas are explicitly managed.
+`pup-check` checks a Python repository for deterministic internal consistency.
+It compares related repository declarations and structure and reports
+inconsistencies.
 
 ## Purpose
 
-Many professional Python repositories share the same infrastructure:
+Professional Python repositories contain declarations and structures that
+should agree with one another.
+Examples include:
 
-- editor and Git configuration
-- ignore and line-ending rules
-- Markdown, YAML, and link-checking configuration
-- Python tooling configuration
-- documentation tooling configuration
-- continuous integration workflows
-- release and package validation surfaces
+- project and package names
+- `src/` package structure
+- `pyproject.toml` metadata
+- command-line entry points
+- Python module paths
 
-Keeping those files synchronized by hand is error-prone.
-`pup-check` makes the shared parts explicit, repeatable, and reviewable.
+Small inconsistencies can remain unnoticed until a command, build, test,
+documentation workflow, or release fails.
 
-## Design Model
+`pup-check` performs deterministic checks for internal repository consistency
+and reports detected problems.
 
-`pup-check` separates repository maintenance into three concerns:
+## Check a Repository
 
-1. **Canonical templates** define the standard files and managed content.
-2. **Repository conventions** identify the target repository shape and applicable template layers.
-3. **Repository-specific surfaces** remain local to the project and require human review.
+```shell
+uvx pup-check
+```
 
-The tool is intentionally conservative.
-It updates files that are known to be managed and reports
-the areas that require human judgment.
+A successful check returns exit code `0`.
+A failed consistency check returns a nonzero exit code and reports the
+detected problem.
 
-## Template Layers
+## Checks
 
-Templates are applied as ordered layers.
-Later layers may override files from earlier layers.
+This release checks:
 
-The standard layer model replaces as specificity increases:
-
-- `ALL` for files shared by all repositories.
-- `ALL-PY` for Python repository tooling.
-- `ALL-PY-SRC` for Python repositories with a `src/` package layout.
-
-This keeps the baseline additive instead of duplicative.
-
-## Managed and Preserved Surfaces
-
-A managed surface is a file that can be updated from the canonical baseline.
-
-A preserved surface is project-specific and
-should not be overwritten automatically.
-Examples include source code, tests, notebooks, data files,
-SQL files, and project-specific documentation.
+- `pyproject.toml` exists
+- `pyproject.toml` can be read and identifies the project
+- a Python package can be detected when a `src/` layout is present
+- modules referenced by `[project.scripts]` entry points exist
 
 ## See Also
 

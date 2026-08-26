@@ -13,6 +13,12 @@ and this project adheres to **[Semantic Versioning](https://semver.org/spec/v2.0
 
 ---
 
+## [0.2.0] - 2026-08-26
+
+- updated to use pup-core v0.2.0.
+
+---
+
 ## [0.1.3] - 2026-08-13
 
 - updated actions (one source of python version in project root)
@@ -80,7 +86,9 @@ Follow these steps when creating a new release.
 
 ### Task 2. Validate
 
-````shell
+<!-- markdownlint-disable MD013 -->
+
+```shell
 uv lock --upgrade
 uv sync
 uv run pre-commit install
@@ -102,13 +110,15 @@ uv build
 uvx twine check dist/*
 ```
 
-### Task 4. Commit, push, tag
+<!-- markdownlint-enable MD013 -->
+
+### Task 3. Commit, push, tag
 
 ```shell
 git add -A
 git commit -m "Prepare X.Y.Z"
 git push -u origin main
-````
+```
 
 Verify actions run on GitHub. After success:
 
@@ -126,7 +136,8 @@ git push origin :refs/tags/vX.Z.Y
 
 ## Links
 
-[Unreleased]: https://github.com/pup-pack/pup-check/compare/v0.1.3...HEAD
+[Unreleased]: https://github.com/pup-pack/pup-check/compare/v0.2.0...HEAD
+[0.2.0]: https://github.com/pup-pack/pup-check/releases/tag/v0.2.0
 [0.1.3]: https://github.com/pup-pack/pup-check/releases/tag/v0.1.3
 [0.1.2]: https://github.com/pup-pack/pup-check/releases/tag/v0.1.2
 [0.1.1]: https://github.com/pup-pack/pup-check/releases/tag/v0.1.1

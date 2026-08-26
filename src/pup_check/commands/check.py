@@ -9,7 +9,7 @@ from pup_check.checks.entry_points import check_entry_points
 from pup_check.checks.files import check_required_files
 from pup_check.checks.packages import check_package_structure
 from pup_check.checks.pyproject import check_pyproject
-from pup_check.write.terminal import print_check_results
+from pup_check.write_terminal import print_check_results
 
 __all__ = ["run"]
 

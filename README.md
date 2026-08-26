@@ -3,8 +3,11 @@
 [![PyPI](https://img.shields.io/pypi/v/pup-check?logo=pypi&label=pypi)](https://pypi.org/project/pup-check/)
 [![Docs Site](https://img.shields.io/badge/docs-site-blue?logo=github)](https://pup-pack.github.io/pup-check/)
 [![Repo](https://img.shields.io/badge/repo-GitHub-black?logo=github)](https://github.com/pup-pack/pup-check)
-[![Python 3.15](https://img.shields.io/badge/python-3.15%2B-blue?logo=python)](./pyproject.toml)
-[![License](https://img.shields.io/badge/license-MIT-yellow.svg)](./LICENSE)
+[![Python 3.15](https://img.shields.io/badge/python-3.15%2B-blue?logo=python)](https://github.com/pup-pack/pup-check/blob/main/pyproject.toml)
+[![uv managed](https://img.shields.io/badge/uv-managed-DE5FE9)](https://docs.astral.sh/uv/)
+[![ty type checked](https://img.shields.io/badge/ty-type_checked-2F80ED)](https://docs.astral.sh/ty/)
+[![Zensical docs](https://img.shields.io/badge/Zensical-docs-purple)](https://zensical.org/)
+[![MIT](https://img.shields.io/badge/license-MIT-yellow.svg)](https://github.com/pup-pack/pup-check/blob/main/LICENSE)
 
 [![CI](https://github.com/pup-pack/pup-check/actions/workflows/ci-python-zensical.yml/badge.svg?branch=main)](https://github.com/pup-pack/pup-check/actions/workflows/ci-python-zensical.yml)
 [![Docs-Deploy](https://github.com/pup-pack/pup-check/actions/workflows/deploy-zensical.yml/badge.svg?branch=main)](https://github.com/pup-pack/pup-check/actions/workflows/deploy-zensical.yml)
@@ -102,9 +105,6 @@ uv run pre-commit run --all-files
 
 # run locally to test
 uv run pup-check
-uv run pup-check --diff
-uv run pup-check --write
-uv run pup-check --write .gitattributes .github/.yamllint.yml .github/workflows/links.yml
 
 # types, tests, docs
 uv run ty check
@@ -125,12 +125,12 @@ git push -u origin main
 
 ## Annotations
 
-[.annotations/annotations.md](./.annotations/annotations.md)
+[.annotations/annotations.md](https://github.com/pup-pack/pup-check/blob/main/.annotations/annotations.md)
 
 ## Citation
 
-[CITATION.cff](./CITATION.cff)
+[CITATION.cff](https://github.com/pup-pack/pup-check/blob/main/CITATION.cff)
 
 ## License
 
-[MIT](./LICENSE)
+[MIT](https://github.com/pup-pack/pup-check/blob/main/LICENSE)

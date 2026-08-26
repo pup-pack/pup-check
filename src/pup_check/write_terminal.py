@@ -17,7 +17,7 @@ def print_check_results(
     print("[pup-check] CHECK")
     print(f"[pup-check] repo: {context.repo_name}")
     print(f"[pup-check] root: {context.root}")
-    print("")
+    print()
 
     for result in results:
         status = "PASS" if result.passed else "FAIL"
@@ -26,5 +26,5 @@ def print_check_results(
     passed = sum(result.passed for result in results)
     failed = len(results) - passed
 
-    print("")
+    print()
     print(f"[pup-check] summary: {passed} passed, {failed} failed")
